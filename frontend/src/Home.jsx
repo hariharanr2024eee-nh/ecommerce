@@ -10,10 +10,10 @@ function Home({ products, addToCart }) {
   return (
     <div className="container">
       <div className="products-header">
-        <h2>Available Products</h2>
+        <h2>🛍️ Shop Our Products</h2>
         <input
           type="text"
-          placeholder="Search products..."
+          placeholder="🔍 Search for products..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="search-input"
@@ -24,26 +24,28 @@ function Home({ products, addToCart }) {
         {filteredProducts.map(product => (
           <div key={product._id} className="product-card">
             <img 
-              src={product.image || 'https://via.placeholder.com/250x180?text=Product'} 
+              src={product.image} 
               alt={product.name} 
               className="product-image"
             />
-            <h3 className="product-name">{product.name}</h3>
-            <p className="product-description">{product.description}</p>
-            <p className="product-price">${product.price}</p>
-            <button 
-              onClick={() => addToCart(product)}
-              className="add-to-cart-btn"
-            >
-              Add to Cart
-            </button>
+            <div className="product-info">
+              <h3 className="product-name">{product.name}</h3>
+              <p className="product-description">{product.description}</p>
+              <p className="product-price">${product.price}</p>
+              <button 
+                onClick={() => addToCart(product)}
+                className="add-to-cart-btn"
+              >
+                🛒 Add to Cart
+              </button>
+            </div>
           </div>
         ))}
       </div>
       
       {filteredProducts.length === 0 && (
-        <div style={{ textAlign: 'center', color: '#7f8c8d', fontSize: '1.2rem', marginTop: '2rem' }}>
-          No products found matching "{searchTerm}"
+        <div style={{ textAlign: 'center', color: 'white', fontSize: '1.5rem', marginTop: '3rem' }}>
+          😔 No products found matching "{searchTerm}"
         </div>
       )}
     </div>

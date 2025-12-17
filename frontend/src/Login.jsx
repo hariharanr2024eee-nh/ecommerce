@@ -35,8 +35,8 @@ function Login({ setUser }) {
             <div className="form-container">
                 <div className="form-header">
                     <div className="form-icon">🔑</div>
-                    <h2>Welcome Back!</h2>
-                    <p>Sign in to your account</p>
+                    <h2>Welcome to $ Store!</h2>
+                    <p>Sign in to start shopping</p>
                 </div>
                 
                 <form onSubmit={handleLogin}>

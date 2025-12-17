@@ -30,8 +30,8 @@ function Register() {
             <div className="form-container">
                 <div className="form-header">
                     <div className="form-icon">📝</div>
-                    <h2>Create Account</h2>
-                    <p>Join our college store today!</p>
+                    <h2>Join $ Store</h2>
+                    <p>Create your account and start shopping!</p>
                 </div>
                 
                 <form onSubmit={handleRegister}>

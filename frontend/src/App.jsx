@@ -10,32 +10,25 @@ function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   
-  // 1. Load User from Storage (to keep them logged in)
   const [user, setUser] = useState(
       JSON.parse(localStorage.getItem('user')) || null
   );
 
-  // 2. Fetch Products
   useEffect(() => {
     axios.get('http://localhost:5000/api/products')
       .then(res => setProducts(res.data.data))
       .catch(err => console.error(err));
   }, []);
-
-  // --- MISSING FUNCTION WAS LIKELY HERE ---
   
-  // 3. Add to Cart Function
   const addToCart = (product) => {
     setCart([...cart, product]);
     alert(`${product.name} added to cart!`);
   };
 
-  // 4. Remove from Cart Function
   const removeFromCart = (indexToRemove) => {
     setCart(cart.filter((_, index) => index !== indexToRemove));
   };
 
-  // 5. Logout Function
   const handleLogout = () => {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
@@ -46,7 +39,7 @@ function App() {
   return (
     <BrowserRouter>
       <nav className="navbar">
-          <h1>🛍️ CollegeStore</h1>
+          <h1>💰 $ Store</h1>
           <div className="nav-links">
             <Link to="/store" className="nav-link">🏠 Home</Link>
             <Link to="/cart" className="nav-link">
@@ -69,7 +62,6 @@ function App() {
       </nav>
 
       <Routes>
-        {/* We pass addToCart here 👇. If it's missing above, the app crashes. */}
         <Route path="/" element={<Login setUser={setUser} />}/>
         <Route path="/store" element={<Home products={products}addToCart={addToCart}/>}/>
         <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} />} />
