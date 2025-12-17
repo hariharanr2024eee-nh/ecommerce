@@ -132,12 +132,14 @@ body {
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  color: #2c3e50;
 }
 
 .search-input:focus {
   outline: none;
   background: white;
   box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  color: #2c3e50;
 }
 
 .products-grid {
@@ -341,12 +343,14 @@ body {
   border-radius: 15px;
   font-size: 1rem;
   background: #f8f9fa;
+  color: #2c3e50;
 }
 
 .form-input:focus {
   outline: none;
   border-color: #667eea;
   background: white;
+  color: #2c3e50;
 }
 
 .form-btn {
